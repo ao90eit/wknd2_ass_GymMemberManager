@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import com.aoinc.wknd2_ass_gymmembermanager.presenters.LoginPresenter;
-import com.aoinc.wknd2_ass_gymmembermanager.presenters.LoginPresenterViewContract.*;
+import com.aoinc.wknd2_ass_gymmembermanager.presenters.LoginPresenterViewContract.LoginViewInterface;
 
 public class LoginActivity extends AppCompatActivity implements LoginViewInterface {
 
