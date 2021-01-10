@@ -5,11 +5,12 @@
     <item
         android:id="@+id/menu_action_add_member"
         android:title="Add Member"
-        app:showAsAction="never|collapseActionView"/>
+        android:icon="@drawable/ic_add_24px"
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/menu_action_delete_all_members"
-        android:title="Delete All"
+        android:title="Delete All Members"
         app:showAsAction="never|collapseActionView"/>
 
     <item

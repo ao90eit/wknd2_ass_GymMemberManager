@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prefs_user_key">user</string>
+    <string name="prefs_password_key">password</string>
+    <string name="prefs_user_default">user</string>
+    <string name="prefs_password_default">password</string>
+</resources>

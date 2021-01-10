@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity implements LoginViewInterfa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         ButterKnife.bind(this);
 
@@ -42,12 +42,12 @@ public class LoginActivity extends AppCompatActivity implements LoginViewInterfa
 
     @OnClick(R.id.sign_in_button)
     void onClickSignIn(View view) {
-//        if (!loginPresenter.verifyLogin(inputUser.getText().toString().trim(),
-//                inputPassword.getText().toString().trim())) {
-//            displayError(getString(R.string.login_fail_alert_message));
-//        } else {
+        if (!loginPresenter.verifyLogin(inputUser.getText().toString().trim(),
+                inputPassword.getText().toString().trim())) {
+            displayError(getString(R.string.login_fail_alert_message));
+        } else {
             startActivity(new Intent(this, MemberListActivity.class));
-//        }
+        }
     }
 
     @Override

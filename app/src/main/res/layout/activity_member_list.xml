@@ -18,7 +18,7 @@
             android:id="@+id/search_bar_editText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Search Members..."
+            android:hint="@string/member_search_bar_hint"
             />
 
     </androidx.appcompat.widget.Toolbar>

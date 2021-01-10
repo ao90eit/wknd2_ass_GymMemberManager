@@ -81,11 +81,8 @@ public class MemberListActivity extends AppCompatActivity implements MemberListV
             case R.id.menu_action_my_account:
                 startActivity(new Intent(this, AccountSettingsActivity.class));
                 break;
-            default:
-                return super.onOptionsItemSelected(item);
         }
 
-        // TODO: determine if this is desired behavior...
         return super.onOptionsItemSelected(item);
     }
 

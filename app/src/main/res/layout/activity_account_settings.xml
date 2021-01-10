@@ -13,8 +13,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:elevation="4dp"
-        tools:background="@color/purple_200"
-        >
+        tools:background="@color/purple_200" >
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -22,10 +21,29 @@
         android:id="@+id/account_photo_image_view"
         android:layout_width="208dp"
         android:layout_height="208dp"
-        app:layout_constraintTop_toBottomOf="@id/account_settings_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/account_settings_toolbar"
+        android:src="@drawable/profile_pic_8" />
 
-        />
+    <EditText
+        android:id="@+id/account_user_name_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent=".7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/account_photo_image_view"
+        android:hint="@string/prefs_user_default" />
 
+    <EditText
+        android:id="@+id/account_password_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent=".7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/account_user_name_editText"
+        android:hint="@string/prefs_password_default" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

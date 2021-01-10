@@ -88,7 +88,6 @@ public class GymMember implements Parcelable {
                 R.drawable.profile_pic_5,
                 R.drawable.profile_pic_6,
                 R.drawable.profile_pic_7,
-                R.drawable.profile_pic_8,
                 R.drawable.profile_pic_9,
         };
 
