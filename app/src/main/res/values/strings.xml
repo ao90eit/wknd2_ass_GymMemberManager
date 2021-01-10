@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">wknd2_ass_GymMemberManager</string>
+    <string name="login_fail_alert_title">Login Failed</string>
+    <string name="alert_ok">Ok</string>
+    <string name="login_fail_alert_message">Incorrect user name or password</string>
+    <string name="prefs_user_default">user</string>
+    <string name="prefs_password_default">password</string>
+</resources>
