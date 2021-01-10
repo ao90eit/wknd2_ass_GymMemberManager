@@ -1,13 +1,16 @@
 package com.aoinc.wknd2_ass_gymmembermanager.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.aoinc.wknd2_ass_gymmembermanager.R;
 
-public class GymMember {
-    private String firstName;
-    private String lastName;
+public class GymMember implements Parcelable {
     private int memberID;
+    private String givenName;
+    private String familyName;
 
-    private enum MemberLevel { REGULAR, PLATINUM, GOLD };
+    public enum MemberLevel { REGULAR, PLATINUM, GOLD };
     private MemberLevel memberLevel;
     private int memberLevelImageResourceID;
 
@@ -15,15 +18,65 @@ public class GymMember {
     private int phoneNumber;
     private String email;
 
-    public GymMember(String firstName, String lastName, MemberLevel memberLevel, int phoneNumber, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public GymMember(String givenName, String familyName, MemberLevel memberLevel, int phoneNumber, String email) {
+        this.givenName = givenName;
+        this.familyName = familyName;
         this.memberLevel = memberLevel;
         this.phoneNumber = phoneNumber;
         this.email = email;
 
         memberLevelImageResourceID = setMemberLevelResourceID(memberLevel);
         profilePhotoResourceID = setRandomProfilePhoto();
+    }
+
+    public GymMember(int memberID, String givenName, String familyName, MemberLevel memberLevel, int profilePhotoResourceID, int phoneNumber, String email) {
+        this.memberID = memberID;
+        this.givenName = givenName;
+        this.familyName = familyName;
+        this.memberLevel = memberLevel;
+        this.profilePhotoResourceID = profilePhotoResourceID;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+
+        memberLevelImageResourceID = setMemberLevelResourceID(memberLevel);
+    }
+
+    protected GymMember(Parcel in) {
+        memberID = in.readInt();
+        givenName = in.readString();
+        familyName = in.readString();
+        memberLevelImageResourceID = in.readInt();
+        profilePhotoResourceID = in.readInt();
+        phoneNumber = in.readInt();
+        email = in.readString();
+    }
+
+    public static final Creator<GymMember> CREATOR = new Creator<GymMember>() {
+        @Override
+        public GymMember createFromParcel(Parcel in) {
+            return new GymMember(in);
+        }
+
+        @Override
+        public GymMember[] newArray(int size) {
+            return new GymMember[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(memberID);
+        dest.writeString(givenName);
+        dest.writeString(familyName);
+        dest.writeInt(memberLevelImageResourceID);
+        dest.writeInt(profilePhotoResourceID);
+        dest.writeInt(phoneNumber);
+        dest.writeString(email);
     }
 
     private int setRandomProfilePhoto() {
@@ -57,12 +110,12 @@ public class GymMember {
         }
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getGivenName() {
+        return givenName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getFamilyName() {
+        return familyName;
     }
 
     public int getMemberID() {

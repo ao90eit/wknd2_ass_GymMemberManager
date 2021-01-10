@@ -58,7 +58,7 @@ public class GymMemberListAdapter extends BaseAdapter {
         profilePhoto.setImageResource(curItem.getProfilePhotoResourceID());
 
         TextView fullName = listItemView.findViewById(R.id.member_listView_name_imageView);
-        fullName.setText(new StringBuilder().append(curItem.getFirstName()).append(" ").append(curItem.getLastName()));
+        fullName.setText(new StringBuilder().append(curItem.getGivenName()).append(" ").append(curItem.getFamilyName()));
 
         ImageView memberLevelImage = listItemView.findViewById(R.id.member_listView_member_level_imageView);
         memberLevelImage.setImageResource(curItem.getMemberLevelImageResourceID());

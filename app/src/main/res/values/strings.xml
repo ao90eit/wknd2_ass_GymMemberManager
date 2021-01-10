@@ -5,4 +5,7 @@
     <string name="login_fail_alert_message">Incorrect user name or password</string>
     <string name="prefs_user_default">user</string>
     <string name="prefs_password_default">password</string>
+    <string name="query_fail_alert_title">Database Connection Failure</string>
+    <string name="query_fail_alert_message">Could not communicate the app database.</string>
+    <string name="empty_member_list_message">Tap \'+\' to add member</string>
 </resources>
