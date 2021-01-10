@@ -21,10 +21,19 @@
         android:id="@+id/account_photo_image_view"
         android:layout_width="208dp"
         android:layout_height="208dp"
+        android:src="@drawable/profile_pic_8"
+        app:layout_constraintBottom_toTopOf="@+id/guide_horiz_50"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/account_settings_toolbar"
-        android:src="@drawable/profile_pic_8" />
+        app:layout_constraintTop_toBottomOf="@id/account_settings_toolbar" />
+
+    <TextView
+        android:id="@+id/account_user_name_label_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account_user_name_label"
+        app:layout_constraintStart_toStartOf="@id/account_user_name_editText"
+        app:layout_constraintTop_toBottomOf="@+id/guide_horiz_50" />
 
     <EditText
         android:id="@+id/account_user_name_editText"
@@ -33,17 +42,32 @@
         app:layout_constraintWidth_percent=".7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/account_photo_image_view"
+        app:layout_constraintTop_toBottomOf="@id/account_user_name_label_textView"
         android:hint="@string/prefs_user_default" />
+
+    <TextView
+        android:id="@+id/account_password_label_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account_password_label"
+        app:layout_constraintStart_toStartOf="@id/account_user_name_editText"
+        app:layout_constraintTop_toBottomOf="@+id/account_user_name_editText" />
 
     <EditText
         android:id="@+id/account_password_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintWidth_percent=".7"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="@string/prefs_password_default"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/account_user_name_editText"
-        android:hint="@string/prefs_password_default" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_password_label_textView"
+        app:layout_constraintWidth_percent=".7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_horiz_50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
