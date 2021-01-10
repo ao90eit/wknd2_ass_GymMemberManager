@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".views.MemberDetailActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/member_detail_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="4dp" >
+
+    </androidx.appcompat.widget.Toolbar>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

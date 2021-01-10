@@ -4,7 +4,17 @@
 
     <item
         android:id="@+id/menu_action_add_member"
-        android:title="Add New Member"
-        app:showAsAction="never"/>
+        android:title="Add Member"
+        app:showAsAction="never|collapseActionView"/>
+
+    <item
+        android:id="@+id/menu_action_delete_all_members"
+        android:title="Delete All"
+        app:showAsAction="never|collapseActionView"/>
+
+    <item
+        android:id="@+id/menu_action_my_account"
+        android:title="My Account"
+        app:showAsAction="never|collapseActionView"/>
 
 </menu>
