@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Wknd2_ass_GymMemberManager">
-        <activity android:name=".views.MemberListActivity"></activity>
+        <activity android:name=".views.AddMemberActivity"></activity>
+        <activity android:name=".views.AccountSettingsActivity" />
+        <activity android:name=".views.MemberDetailActivity" />
+        <activity android:name=".views.MemberListActivity" />
         <activity android:name=".views.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
