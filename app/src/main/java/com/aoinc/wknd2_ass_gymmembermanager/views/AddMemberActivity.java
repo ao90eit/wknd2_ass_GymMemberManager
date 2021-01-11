@@ -98,8 +98,7 @@ public class AddMemberActivity extends AppCompatActivity implements AddMemberVie
                 phone.equals("") || email.equals(""))
             return null;
 
-        return new GymMember(givenName, familyName, GymMember.MemberLevel.valueOf(memberLevel),
-                Integer.parseInt(phone), email);
+        return new GymMember(givenName, familyName, GymMember.MemberLevel.valueOf(memberLevel), phone, email);
     }
 
     @Override

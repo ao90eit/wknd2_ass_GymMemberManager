@@ -47,7 +47,7 @@ public class GymMemberDatabaseHelper extends SQLiteOpenHelper {
                 + COLUMN_MEMBER_LEVEL + " TEXT, "
 //                + COLUMN__MEMBER_LEVEL_ID + " INTEGER, "
                 + COLUMN_MEMBER_PHOTO_ID + " INTEGER, "
-                + COLUMN_MEMBER_PHONE_NUMBER + " INTEGER, "
+                + COLUMN_MEMBER_PHONE_NUMBER + " TEXT, "
                 + COLUMN_MEMBER_EMAIL + " TEXT)";
 
         db.execSQL(createTable);
@@ -74,7 +74,7 @@ public class GymMemberDatabaseHelper extends SQLiteOpenHelper {
             String familyName = cursor.getString(cursor.getColumnIndex(COLUMN_MEMBER_FAMILY_NAME));
             String memberLevel = cursor.getString(cursor.getColumnIndex(COLUMN_MEMBER_LEVEL));
             int photoResourceID = cursor.getInt(cursor.getColumnIndex(COLUMN_MEMBER_PHOTO_ID));
-            int phoneNumber = cursor.getInt(cursor.getColumnIndex(COLUMN_MEMBER_PHONE_NUMBER));
+            String phoneNumber = cursor.getString(cursor.getColumnIndex(COLUMN_MEMBER_PHONE_NUMBER));
             String email = cursor.getString(cursor.getColumnIndex(COLUMN_MEMBER_EMAIL));
 
             memberList.add(new GymMember(memberID, givenName, familyName,
@@ -102,7 +102,7 @@ public class GymMemberDatabaseHelper extends SQLiteOpenHelper {
             String familyName = cursor.getString(cursor.getColumnIndex(COLUMN_MEMBER_FAMILY_NAME));
             String memberLevel = cursor.getString(cursor.getColumnIndex(COLUMN_MEMBER_LEVEL));
             int photoResourceID = cursor.getInt(cursor.getColumnIndex(COLUMN_MEMBER_PHOTO_ID));
-            int phoneNumber = cursor.getInt(cursor.getColumnIndex(COLUMN_MEMBER_PHONE_NUMBER));
+            String phoneNumber = cursor.getString(cursor.getColumnIndex(COLUMN_MEMBER_PHONE_NUMBER));
             String email = cursor.getString(cursor.getColumnIndex(COLUMN_MEMBER_EMAIL));
 
             filteredMemberList.add(new GymMember(memberID, givenName, familyName,

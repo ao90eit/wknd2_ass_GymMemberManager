@@ -60,7 +60,7 @@ public class MemberListActivity extends AppCompatActivity implements MemberListV
         memberListPresenter = new MemberListPresenter(this);
 
         // DEBUG ONLY
-//        GenerateTestMembers();
+        GenerateTestMembers();
 
         gymMemberListView.setEmptyView(emptyListTextView);
     }
@@ -155,19 +155,19 @@ public class MemberListActivity extends AppCompatActivity implements MemberListV
     private void GenerateTestMembers() {
         for (int i = 0; i < 3; i++) {
             memberListPresenter.insertMember(new GymMember("Burt", "Reynolds",
-                    GymMember.MemberLevel.GOLD, 1234567890, "burt.reynolds@gmail.com"));
+                    GymMember.MemberLevel.GOLD, "1234567890", "burt.reynolds@gmail.com"));
 
             memberListPresenter.insertMember(new GymMember("Jane", "Addams",
-                    GymMember.MemberLevel.GOLD, 1122334455, "jane.addams@gmail.com"));
+                    GymMember.MemberLevel.GOLD, "1122334455", "jane.addams@gmail.com"));
 
             memberListPresenter.insertMember(new GymMember("Butch", "Cassidy",
-                    GymMember.MemberLevel.GOLD, 1102030405, "butch.cassidy@gmail.com"));
+                    GymMember.MemberLevel.GOLD, "1102030405", "butch.cassidy@gmail.com"));
 
             memberListPresenter.insertMember(new GymMember("Ernest", "Hemingway",
-                    GymMember.MemberLevel.GOLD, 1102030405, "ernest.hemingway@gmail.com"));
+                    GymMember.MemberLevel.GOLD, "1102030405", "ernest.hemingway@gmail.com"));
 
             memberListPresenter.insertMember(new GymMember("Cleo", "Patra",
-                    GymMember.MemberLevel.GOLD, 1102030405, "Funky.CatLady@gmail.com"));
+                    GymMember.MemberLevel.GOLD, "1102030405", "Funky.CatLady@gmail.com"));
         }
     }
 }

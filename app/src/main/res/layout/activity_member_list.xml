@@ -20,6 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/member_search_bar_hint"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
             />
 
     </androidx.appcompat.widget.Toolbar>

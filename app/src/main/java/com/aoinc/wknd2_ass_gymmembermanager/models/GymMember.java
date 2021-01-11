@@ -16,10 +16,10 @@ public class GymMember implements Parcelable {
     private int memberLevelImageResourceID;
 
     private int profilePhotoResourceID;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
 
-    public GymMember(String givenName, String familyName, MemberLevel memberLevel, int phoneNumber, String email) {
+    public GymMember(String givenName, String familyName, MemberLevel memberLevel, String phoneNumber, String email) {
         this.givenName = givenName;
         this.familyName = familyName;
         this.memberLevel = memberLevel;
@@ -30,7 +30,7 @@ public class GymMember implements Parcelable {
         profilePhotoResourceID = setRandomProfilePhoto();
     }
 
-    public GymMember(int memberID, String givenName, String familyName, MemberLevel memberLevel, int profilePhotoResourceID, int phoneNumber, String email) {
+    public GymMember(int memberID, String givenName, String familyName, MemberLevel memberLevel, int profilePhotoResourceID, String phoneNumber, String email) {
         this.memberID = memberID;
         this.givenName = givenName;
         this.familyName = familyName;
@@ -49,7 +49,7 @@ public class GymMember implements Parcelable {
         memberLevel = MemberLevel.valueOf(in.readString());
         memberLevelImageResourceID = in.readInt();
         profilePhotoResourceID = in.readInt();
-        phoneNumber = in.readInt();
+        phoneNumber = in.readString();
         email = in.readString();
     }
 
@@ -78,7 +78,7 @@ public class GymMember implements Parcelable {
         dest.writeString(memberLevel.toString());
         dest.writeInt(memberLevelImageResourceID);
         dest.writeInt(profilePhotoResourceID);
-        dest.writeInt(phoneNumber);
+        dest.writeString(phoneNumber);
         dest.writeString(email);
     }
 
@@ -136,7 +136,7 @@ public class GymMember implements Parcelable {
         return profilePhotoResourceID;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 

@@ -109,7 +109,7 @@ public class MemberDetailActivity extends AppCompatActivity implements MemberDet
         memberIDTextView.setText(idNumber);
         memberLevelTextView.setText(member.getMemberLevel().toString());
 
-        String phoneNumber = String.valueOf(member.getPhoneNumber());
+        String phoneNumber = member.getPhoneNumber();
         String formattedPhoneNum = String.format("%S-%s-%s",
                 phoneNumber.substring(0,3), phoneNumber.substring(3,6), phoneNumber.substring(6));
         phoneTextView.setText(formattedPhoneNum);
