@@ -80,11 +80,9 @@ public class MemberListActivity extends AppCompatActivity implements MemberListV
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_action_add_member:
-                // TODO: wait for Gym Member result, reload list view
                 startActivity(new Intent(this, AddMemberActivity.class));
                 break;
             case R.id.menu_action_delete_all_members:
-                // TODO delete everything in the db, reload list view
                 memberListPresenter.deleteAllMembers();
                 break;
             case R.id.menu_action_my_account:
