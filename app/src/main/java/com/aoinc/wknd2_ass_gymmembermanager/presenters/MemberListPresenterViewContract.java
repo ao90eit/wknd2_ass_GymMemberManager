@@ -16,7 +16,6 @@ public interface MemberListPresenterViewContract {
     public interface MemberListPresenterInterface {
         void getFullMemberList();
         void insertMember(GymMember insertMember);
-        void deleteMember(GymMember deleteMember);
         void deleteAllMembers();
     }
 }

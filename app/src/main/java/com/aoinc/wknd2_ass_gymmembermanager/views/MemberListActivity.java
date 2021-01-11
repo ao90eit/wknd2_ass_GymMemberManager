@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -53,10 +54,18 @@ public class MemberListActivity extends AppCompatActivity implements MemberListV
         memberListPresenter = new MemberListPresenter(this);
 
         // TODO: remove test data
-        memberListPresenter.insertMember(new GymMember("Jane", "Addams",
+        memberListPresenter.insertMember(new GymMember("Burt", "Reynolds",
                 GymMember.MemberLevel.GOLD, 1234567890, "burt.reynolds@gmail.com"));
 
+        memberListPresenter.insertMember(new GymMember("Jane", "Addams",
+                GymMember.MemberLevel.GOLD, 1122334455, "jane.addams@gmail.com"));
+
         gymMemberListView.setEmptyView(emptyListTextView);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         memberListPresenter.getFullMemberList();
     }
 

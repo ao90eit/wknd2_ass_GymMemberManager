@@ -2,6 +2,7 @@ package com.aoinc.wknd2_ass_gymmembermanager.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import com.aoinc.wknd2_ass_gymmembermanager.R;
 
@@ -45,6 +46,7 @@ public class GymMember implements Parcelable {
         memberID = in.readInt();
         givenName = in.readString();
         familyName = in.readString();
+        memberLevel = MemberLevel.valueOf(in.readString());
         memberLevelImageResourceID = in.readInt();
         profilePhotoResourceID = in.readInt();
         phoneNumber = in.readInt();
@@ -73,6 +75,7 @@ public class GymMember implements Parcelable {
         dest.writeInt(memberID);
         dest.writeString(givenName);
         dest.writeString(familyName);
+        dest.writeString(memberLevel.toString());
         dest.writeInt(memberLevelImageResourceID);
         dest.writeInt(profilePhotoResourceID);
         dest.writeInt(phoneNumber);
@@ -101,7 +104,7 @@ public class GymMember implements Parcelable {
     private int setMemberLevelResourceID(MemberLevel memberLevel) {
         switch (memberLevel) {
             case PLATINUM:
-              return R.drawable.ic_laurel_silver;
+              return R.drawable.ic_laurel_platinum;
             case GOLD:
                return R.drawable.ic_laurel_gold;
             default:    // REGULAR

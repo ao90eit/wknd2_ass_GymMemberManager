@@ -97,8 +97,8 @@ public class GymMemberDatabaseHelper extends SQLiteOpenHelper {
         getWritableDatabase().insert(GYM_MEMBER_TABLE_NAME, null, memberValues);
     }
 
-    public void deleteMemberFromDatabase(GymMember gymMember) {
-        String deleteSql = "DELETE FROM " + GYM_MEMBER_TABLE_NAME + " WHERE " + COLUMN_MEMBER_ID + " = " + gymMember.getMemberID();
+    public void deleteMemberFromDatabase(int memberID) {
+        String deleteSql = "DELETE FROM " + GYM_MEMBER_TABLE_NAME + " WHERE " + COLUMN_MEMBER_ID + " = " + memberID;
         getWritableDatabase().execSQL(deleteSql);
     }
 

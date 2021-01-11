@@ -46,22 +46,6 @@ public class MemberListPresenter implements MemberListPresenterInterface {
     }
 
     @Override
-    public void deleteMember(GymMember deleteMember) {
-        new Thread() {
-            @Override
-            public void run() {
-                super.run();
-                try {
-                    gymMemberDatabaseHelper.deleteMemberFromDatabase(deleteMember);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    memberListView.displayError(e.getMessage());
-                }
-            }
-        }.start();
-    }
-
-    @Override
     public void deleteAllMembers() {
         new Thread() {
             @Override
