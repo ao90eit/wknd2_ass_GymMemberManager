@@ -52,7 +52,7 @@ public class AddMemberActivity extends AppCompatActivity implements AddMemberVie
         ButterKnife.bind(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.add_member_toolbar);
-        toolbar.setTitle("");
+        toolbar.setTitle(R.string.add_member_toolbar_title);
         setSupportActionBar(toolbar);
 
         ArrayAdapter<CharSequence> enumAdapter = ArrayAdapter.createFromResource(this,

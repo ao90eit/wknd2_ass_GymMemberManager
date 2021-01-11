@@ -6,17 +6,23 @@
     <string name="query_fail_alert_title">Database Connection Failure</string>
     <string name="query_fail_alert_message">Could not communicate the app database.</string>
     <string name="empty_member_list_message">Tap \'+\' to add member</string>
-    <string name="member_search_bar_hint">Search members...</string>
-    <string name="account_user_name_label">User Name</string>
+    <string name="member_search_bar_hint">Search members…</string>
+    <string name="account_user_name_label">User name</string>
     <string name="account_password_label">Password</string>
     <string name="member_detail_id_label">Member ID</string>
     <string name="member_detail_level_label">Member Level</string>
     <string name="member_detail_phone_label">Phone #</string>
     <string name="member_detail_email_label">Email</string>
-    <string name="member_detail_call_toast">Calling %s...</string>
+    <string name="member_detail_call_toast">Calling %s…</string>
     <string name="given_name_hint">First name</string>
     <string name="add_family_name_hint">Last name</string>
     <string name="add_phone_hint">Phone</string>
     <string name="add_email_hint">Email</string>
     <string name="add_member_missing_values_toast">Please fill in missing values</string>
+    <string name="login_title">Gym Membership Manager</string>
+    <string name="login_user_name_hint">User name</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_button">Sign in</string>
+    <string name="add_member_toolbar_title">Add New Member</string>
+    <string name="account_toolbar_title">My Account</string>
 </resources>

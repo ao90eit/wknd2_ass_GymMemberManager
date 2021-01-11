@@ -37,7 +37,7 @@ public class AccountSettingsActivity extends AppCompatActivity implements Accoun
         accountSettingsPresenter = new AccountSettingsPresenter(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.account_settings_toolbar);
-        toolbar.setTitle("");
+        toolbar.setTitle(R.string.account_toolbar_title);
         setSupportActionBar(toolbar);
 
         populateAccountInformation();

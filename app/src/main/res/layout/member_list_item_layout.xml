@@ -3,45 +3,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/transparent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="112dp">
 
         <ImageView
             android:id="@+id/member_listView_photo_imageView"
-            android:layout_width="0dp"
-            android:layout_height="112dp"
+            style="@style/ListLayoutPhoto"
             tools:src="@drawable/profile_pic_1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent=".3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/member_listView_name_imageView"
             />
 
         <TextView
             android:id="@+id/member_listView_name_imageView"
+            style="@style/StandardTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            tools:text="Amanda Grayson"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/member_listView_member_level_imageView"
             app:layout_constraintStart_toEndOf="@id/member_listView_photo_imageView"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintWidth_percent=".6"
-            android:textAlignment="center"
-            android:textSize="24sp"
-
-            />
+            app:layout_constraintWidth_percent=".5"
+            tools:text="Amanda Grayson" />
 
         <ImageView
             android:id="@+id/member_listView_member_level_imageView"
-            android:layout_width="0dp"
-            android:layout_height="64dp"
-            tools:src="@drawable/ic_laurel_gold"
-            app:layout_constraintTop_toTopOf="parent"
+            style="@style/ListMemberLevelIcon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintWidth_percent=".1" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent=".1"
+            tools:src="@drawable/ic_laurel_gold" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,4 +13,106 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="TitleTextFont">
+        <item name="android:fontFamily">@font/bebas_neue</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StandardTextFont">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ProfileNameTitle" parent="TitleTextFont">
+        <item name="android:textSize">48sp</item>
+    </style>
+
+    <style name="LoginTitle" parent="TitleTextFont">
+        <item name="android:textSize">60sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="StandardEditText" parent="StandardTextView">
+        <item name="android:inputType">text</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:imeOptions">actionNext</item>
+    </style>
+
+    <style name="StandardTextView" parent="StandardTextFont">
+        <item name="layout_constraintWidth_percent">.7</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="AccountTextView" parent="StandardTextView">
+        <item name="layout_constraintWidth_percent">.6</item>
+    </style>
+
+    <style name="BackgroundTextView" parent="StandardTextView">
+        <item name="android:textColor">@android:color/tertiary_text_light</item>
+    </style>
+
+    <style name="PasswordEditText" parent="StandardEditText">
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <style name="StandardButton" parent="StandardTextFont">
+        <item name="layout_constraintWidth_percent">.7</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/button_shape</item>
+    </style>
+
+    <style name="CallButton" parent="StandardButton">
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@drawable/call_button_shape</item>
+    </style>
+
+    <style name="StandardLabelIcon">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+    </style>
+
+    <style name="AccountLabelIcon">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+
+    <style name="MemberLevelIcon" parent="AccountLabelIcon">
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="ListMemberLevelIcon" parent="MemberLevelIcon">
+        <item name="android:layout_margin">12dp</item>
+    </style>
+
+    <style name="StandardProfilePhoto">
+        <item name="android:layout_width">208dp</item>
+        <item name="android:layout_height">208dp</item>
+    </style>
+
+    <style name="ListLayoutPhoto">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="BackgroundLoginList">
+        <item name="android:background">@color/tiffany_blue</item>
+    </style>
+
+    <style name="BackgroundMember">
+        <item name="android:background">@color/yellow</item>
+    </style>
+
+    <style name="BackgroundAccount">
+        <item name="android:background">@color/hot_pink</item>
+    </style>
+
+    <style name="BackgroundTransparent">
+        <item name="android:background">#00FFFFFF</item>
+    </style>
+
 </resources>

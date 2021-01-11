@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.MemberDetailActivity">
+    tools:context=".views.MemberDetailActivity"
+    style="@style/BackgroundMember">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/member_detail_toolbar"
@@ -18,9 +19,8 @@
 
     <ImageView
         android:id="@+id/member_detail_photo_image_view"
-        android:layout_width="208dp"
-        android:layout_height="208dp"
-        app:layout_constraintBottom_toTopOf="@+id/guide_horiz_40"
+        style="@style/StandardProfilePhoto"
+        app:layout_constraintBottom_toTopOf="@+id/guide_horiz_45"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/member_detail_toolbar"
@@ -28,89 +28,95 @@
 
     <TextView
         android:id="@+id/member_detail_full_name_textView"
+        style="@style/ProfileNameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toStartOf="@id/member_detail_level_icon_imageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guide_horiz_40"
+        app:layout_constraintTop_toTopOf="@+id/guide_horiz_45"
         tools:text="Shaina d'Orestes" />
 
     <ImageView
         android:id="@+id/member_detail_level_icon_imageView"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        style="@style/MemberLevelIcon"
+        app:layout_constraintBottom_toBottomOf="@id/member_detail_full_name_textView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/member_detail_full_name_textView"
         app:layout_constraintTop_toTopOf="@id/member_detail_full_name_textView"
-        app:layout_constraintBottom_toBottomOf="@id/member_detail_full_name_textView"
         tools:src="@drawable/ic_laurel_platinum" />
 
-    <TextView
-        android:id="@+id/member_detail_id_label_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/member_detail_full_name_textView"
-        app:layout_constraintEnd_toStartOf="@id/guide_vert_45"
-        android:text="@string/member_detail_id_label" />
+    <ImageView
+        android:id="@+id/detail_human_icon_imageView"
+        style="@style/StandardLabelIcon"
+        android:src="@drawable/ic_perm_identity_24px"
+        app:layout_constraintBottom_toBottomOf="@+id/member_detail_id_number_textView"
+        app:layout_constraintEnd_toEndOf="@id/guide_vert_25"
+        app:layout_constraintTop_toTopOf="@+id/member_detail_id_number_textView" />
 
     <TextView
         android:id="@+id/member_detail_id_number_textView"
-        android:layout_width="wrap_content"
+        style="@style/AccountTextView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/guide_vert_55"
-        app:layout_constraintTop_toTopOf="@id/member_detail_id_label_textView"
+        app:layout_constraintTop_toBottomOf="@+id/member_detail_full_name_textView"
+        app:layout_constraintStart_toEndOf="@id/guide_vert_25"
         tools:text="#27" />
 
-    <TextView
-        android:id="@+id/member_detail_level_label_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/member_detail_id_label_textView"
-        app:layout_constraintEnd_toStartOf="@id/guide_vert_45"
-        android:text="@string/member_detail_level_label" />
+    <ImageView
+        android:id="@+id/detail_dumbbell_icon_imageView"
+        style="@style/StandardLabelIcon"
+        android:src="@drawable/ic_fitness_center_24px"
+        app:layout_constraintBottom_toBottomOf="@+id/member_detail_level_type_textView"
+        app:layout_constraintEnd_toEndOf="@id/guide_vert_25"
+        app:layout_constraintTop_toTopOf="@+id/member_detail_level_type_textView" />
 
     <TextView
         android:id="@+id/member_detail_level_type_textView"
-        android:layout_width="wrap_content"
+        style="@style/AccountTextView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/guide_vert_55"
-        app:layout_constraintTop_toTopOf="@id/member_detail_level_label_textView"
+        app:layout_constraintStart_toStartOf="@+id/guide_vert_25"
+        app:layout_constraintTop_toBottomOf="@+id/member_detail_id_number_textView"
         tools:text="Platinum" />
 
-    <TextView
-        android:id="@+id/member_detail_phone_label_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/member_detail_level_label_textView"
-        app:layout_constraintEnd_toStartOf="@id/guide_vert_45"
-        android:text="@string/member_detail_phone_label" />
+    <ImageView
+        android:id="@+id/detail_phone_icon_imageView"
+        style="@style/StandardLabelIcon"
+        android:src="@drawable/ic_phone_24px"
+        app:layout_constraintBottom_toBottomOf="@+id/member_detail_phone_number_textView"
+        app:layout_constraintEnd_toEndOf="@id/guide_vert_25"
+        app:layout_constraintTop_toTopOf="@+id/member_detail_phone_number_textView" />
 
     <TextView
         android:id="@+id/member_detail_phone_number_textView"
-        android:layout_width="wrap_content"
+        style="@style/AccountTextView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/guide_vert_55"
-        app:layout_constraintTop_toTopOf="@id/member_detail_phone_label_textView"
+        app:layout_constraintStart_toEndOf="@+id/guide_vert_25"
+        app:layout_constraintTop_toBottomOf="@id/member_detail_level_type_textView"
         tools:text="555-555-5555" />
 
-    <TextView
-        android:id="@+id/member_detail_email_label_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/member_detail_phone_label_textView"
-        app:layout_constraintEnd_toStartOf="@id/guide_vert_45"
-        android:text="@string/member_detail_email_label" />
+    <ImageView
+        android:id="@+id/detail_email_icon_imageView"
+        style="@style/StandardLabelIcon"
+        android:src="@drawable/ic_email_24px"
+        app:layout_constraintBottom_toBottomOf="@+id/member_detail_email_address_textView"
+        app:layout_constraintEnd_toEndOf="@id/guide_vert_25"
+        app:layout_constraintTop_toTopOf="@+id/member_detail_email_address_textView" />
 
     <TextView
         android:id="@+id/member_detail_email_address_textView"
-        android:layout_width="wrap_content"
+        style="@style/AccountTextView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/guide_vert_55"
-        app:layout_constraintTop_toTopOf="@id/member_detail_email_label_textView"
-        tools:text="my.email@gmail.com" />
+        app:layout_constraintStart_toStartOf="@+id/guide_vert_25"
+        app:layout_constraintTop_toBottomOf="@id/member_detail_phone_number_textView"
+        tools:text="burt.reynolds@gmail.com" />
 
     <ImageButton
         android:id="@+id/member_detail_call_imageButton"
+        style="@style/CallButton"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:scaleType="fitCenter"
@@ -118,28 +124,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/member_detail_email_label_textView"
+        app:layout_constraintTop_toBottomOf="@+id/member_detail_email_address_textView"
         app:layout_constraintWidth_percent=".6" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide_vert_45"
+        android:id="@+id/guide_vert_25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".45" />
+        app:layout_constraintGuide_percent=".25" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide_vert_55"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".55" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide_horiz_40"
+        android:id="@+id/guide_horiz_45"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".5" />
+        app:layout_constraintGuide_percent=".4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.AddMemberActivity">
+    tools:context=".views.AddMemberActivity"
+    style="@style/BackgroundMember">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/add_member_toolbar"
@@ -18,89 +19,121 @@
 
     <ImageView
         android:id="@+id/add_human_icon_imageView"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        app:layout_constraintEnd_toStartOf="@id/guide_vert_25"
-        app:layout_constraintTop_toBottomOf="@id/add_member_toolbar"
+        style="@style/StandardLabelIcon"
+        android:src="@drawable/ic_perm_identity_24px"
         app:layout_constraintBottom_toBottomOf="@id/add_given_name_editText"
-        android:src="@drawable/ic_perm_identity_24px" />
+        app:layout_constraintEnd_toStartOf="@id/guide_vert_15"
+        app:layout_constraintTop_toTopOf="@+id/add_given_name_editText" />
 
     <EditText
         android:id="@+id/add_given_name_editText"
+        style="@style/StandardEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/given_name_hint"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/guide_vert_25"
-        app:layout_constraintTop_toBottomOf="@+id/add_member_toolbar" />
+        app:layout_constraintStart_toEndOf="@id/guide_vert_15"
+        app:layout_constraintTop_toTopOf="@+id/guid_horiz_20" />
 
     <EditText
         android:id="@+id/add_family_name_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/guide_vert_25"
+        style="@style/StandardEditText"
+        app:layout_constraintStart_toEndOf="@id/guide_vert_15"
         app:layout_constraintTop_toBottomOf="@id/add_given_name_editText"
         app:layout_constraintEnd_toEndOf="parent"
         android:hint="@string/add_family_name_hint"/>
 
     <ImageView
         android:id="@+id/add_member_level_icon_imageView"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        style="@style/StandardLabelIcon"
         android:src="@drawable/ic_fitness_center_24px"
         app:layout_constraintBottom_toBottomOf="@+id/add_member_level_spinner"
-        app:layout_constraintEnd_toStartOf="@id/guide_vert_25"
+        app:layout_constraintEnd_toStartOf="@id/guide_vert_15"
         app:layout_constraintTop_toTopOf="@+id/add_member_level_spinner" />
 
     <Spinner
         android:id="@+id/add_member_level_spinner"
+        style="@style/StandardEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/add_family_name_editText"
-        app:layout_constraintStart_toEndOf="@id/guide_vert_25"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guide_vert_15"
+        app:layout_constraintTop_toTopOf="@+id/guid_horiz_45" />
 
     <ImageView
         android:id="@+id/add_phone_icon_imageView"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        app:layout_constraintEnd_toStartOf="@id/guide_vert_25"
+        style="@style/StandardLabelIcon"
+        app:layout_constraintEnd_toStartOf="@id/guide_vert_15"
         app:layout_constraintTop_toTopOf="@id/add_phone_editText"
         app:layout_constraintBottom_toBottomOf="@id/add_phone_editText"
         android:src="@drawable/ic_phone_24px" />
 
     <EditText
         android:id="@+id/add_phone_editText"
+        style="@style/StandardEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/add_phone_hint"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/guide_vert_25"
-        app:layout_constraintTop_toBottomOf="@id/add_member_level_spinner" />
+        app:layout_constraintStart_toEndOf="@id/guide_vert_15"
+        app:layout_constraintTop_toBottomOf="@id/guid_horiz_55"
+        android:inputType="number"/>
 
     <ImageView
         android:id="@+id/add_email_icon_imageView"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        style="@style/StandardLabelIcon"
         android:src="@drawable/ic_email_24px"
         app:layout_constraintBottom_toBottomOf="@+id/add_email_editText"
-        app:layout_constraintEnd_toStartOf="@id/guide_vert_25"
+        app:layout_constraintEnd_toStartOf="@id/guide_vert_15"
         app:layout_constraintTop_toTopOf="@+id/add_email_editText" />
 
     <EditText
         android:id="@+id/add_email_editText"
+        style="@style/StandardEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/add_email_hint"
+        android:imeOptions="actionDone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/guide_vert_25"
-        app:layout_constraintTop_toBottomOf="@id/add_phone_editText" />
+        app:layout_constraintStart_toEndOf="@id/guide_vert_15"
+        app:layout_constraintTop_toTopOf="@+id/guid_horiz_70"
+        android:inputType="textEmailAddress"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide_vert_25"
+        android:id="@+id/guide_vert_15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".25" />
+        app:layout_constraintGuide_percent=".15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guid_horiz_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guid_horiz_45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".45"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guid_horiz_55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".55"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guid_horiz_70"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".7"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
