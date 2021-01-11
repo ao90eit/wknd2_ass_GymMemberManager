@@ -17,5 +17,6 @@ public interface MemberListPresenterViewContract {
         void getFullMemberList();
         void insertMember(GymMember insertMember);
         void deleteAllMembers();
+        void getFilteredMemberList(String searchString);
     }
 }

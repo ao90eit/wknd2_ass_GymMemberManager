@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -82,6 +83,34 @@ public class GymMemberDatabaseHelper extends SQLiteOpenHelper {
         }
 
         return memberList;
+    }
+
+    public List<GymMember> getFilteredMemberList(String searchFilter) {
+        List<GymMember> filteredMemberList = new ArrayList<>();
+
+        String filter = new StringBuilder().append("\'").append(searchFilter).append("%").append("\'").toString();
+        String query = "SELECT * FROM " + GYM_MEMBER_TABLE_NAME +
+                                " WHERE " + COLUMN_MEMBER_GIVEN_NAME + " LIKE " + filter +
+                                " ORDER BY " + COLUMN_MEMBER_GIVEN_NAME + " ASC";
+
+        Cursor cursor = getReadableDatabase().rawQuery( query, null, null);
+        cursor.move(-1);
+
+        while (cursor.moveToNext()) {
+            int memberID = cursor.getInt(cursor.getColumnIndex(COLUMN_MEMBER_ID));
+            String givenName = cursor.getString(cursor.getColumnIndex(COLUMN_MEMBER_GIVEN_NAME));
+            String familyName = cursor.getString(cursor.getColumnIndex(COLUMN_MEMBER_FAMILY_NAME));
+            String memberLevel = cursor.getString(cursor.getColumnIndex(COLUMN_MEMBER_LEVEL));
+            int photoResourceID = cursor.getInt(cursor.getColumnIndex(COLUMN_MEMBER_PHOTO_ID));
+            int phoneNumber = cursor.getInt(cursor.getColumnIndex(COLUMN_MEMBER_PHONE_NUMBER));
+            String email = cursor.getString(cursor.getColumnIndex(COLUMN_MEMBER_EMAIL));
+
+            filteredMemberList.add(new GymMember(memberID, givenName, familyName,
+                    GymMember.MemberLevel.valueOf(memberLevel), photoResourceID,
+                    phoneNumber, email));
+        }
+
+        return filteredMemberList;
     }
 
     public void insertNewMemberIntoDatabase(GymMember gymMember) {

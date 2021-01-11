@@ -23,7 +23,7 @@ public class MemberListPresenter implements MemberListPresenterInterface {
                     memberListView.displayMemberList(gymMemberDatabaseHelper.getFullMemberList());
                 } catch (Exception e) {
                     e.printStackTrace();
-                    memberListView.displayError((e.getMessage()));
+                    memberListView.displayError(e.getMessage());
                 }
             }
         }.start();
@@ -54,6 +54,22 @@ public class MemberListPresenter implements MemberListPresenterInterface {
                 try {
                     gymMemberDatabaseHelper.deleteAllMembersFromDatabase();
                     memberListView.displayMemberList(gymMemberDatabaseHelper.getFullMemberList());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    memberListView.displayError(e.getMessage());
+                }
+            }
+        }.start();
+    }
+
+    @Override
+    public void getFilteredMemberList(String searchString) {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    memberListView.displayMemberList(gymMemberDatabaseHelper.getFilteredMemberList(searchString));
                 } catch (Exception e) {
                     e.printStackTrace();
                     memberListView.displayError(e.getMessage());

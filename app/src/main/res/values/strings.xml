@@ -4,7 +4,7 @@
     <string name="alert_ok">Ok</string>
     <string name="login_fail_alert_message">Incorrect user name or password</string>
     <string name="query_fail_alert_title">Database Connection Failure</string>
-    <string name="query_fail_alert_message">Could not communicate the app database.</string>
+    <string name="query_fail_alert_message">Could not communicate with app database.</string>
     <string name="empty_member_list_message">Tap \'+\' to add member</string>
     <string name="member_search_bar_hint">Search members…</string>
     <string name="account_user_name_label">User name</string>
